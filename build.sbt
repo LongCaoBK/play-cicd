@@ -29,6 +29,7 @@ libraryDependencies ++= Seq(
   "com.github.tototoshi" %% "slick-joda-mapper" % "2.2.0",
   "joda-time" % "joda-time" % "2.7",
   "org.joda" % "joda-convert" % "1.7",
+  "com.heroku.sdk" % "heroku-jdbc" % "0.1.0",
   specs2 % Test,
   cache,
   filters
