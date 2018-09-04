@@ -2,7 +2,7 @@ import com.typesafe.sbt.SbtScalariform._
 
 import scalariform.formatter.preferences._
 
-name := "training-project"
+name := "play-cicd"
 
 version := "1.0.0"
 

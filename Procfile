@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/play-silhouette-seed -Dhttp.port=${PORT} -Dconfig.resource=${PLAY_CONF_FILE}
+web: target/universal/stage/bin/play-cicd -Dplay.http.secret.key=123123123 -Dplay.evolutions.db.default.autoApply=true -Dhttp.port=${PORT}
