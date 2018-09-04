@@ -18,9 +18,6 @@ server.pid
 
 .idea
 .github
-conf/database.conf
-conf/mailer.conf
-conf/silhouette.conf
 project/project
 project/artifact
 devnet.iml
