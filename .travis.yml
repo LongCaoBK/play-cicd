@@ -1,0 +1,22 @@
+language: scala
+scala:
+- 2.11.8
+jdk:
+- oraclejdk8
+cache:
+  directories:
+  - "$HOME/.ivy2"
+script:
+- sbt dist
+before_deploy:
+- git config --local user.name "LongCaoBK"
+- git config --local user.email "playhayhl@gmail.com"
+- git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+deploy:
+  provider: releases
+  api_key:
+    secure: Jx42Epe0Jf2lrur2vGZQBWVxlAQnogEQxT0Um0x5+/tSKDMrXmtVqZHpwAtaIRNw7xzOwYW+lRwhGW/xWA/tGNzY9WwnDB9+sH2dXUwXs+lm3JNN1C+ctL5hM9nKbolILp1wcSacYoZE6Xd50/ceF88BDOFCjm524XABRE9nwFQfeX8yffWHCHKxhDWlCfgTHGPWEhuaVeD7qt20x5HOirafqMzt+l2ZdRMC8D/SGQ4cYfpl2RXRm43F8fVhNDY+tZfYZlgyD37g9d2bz4qLsEpNvWXwMNIIACHs41D+0I+mGs+cWkZMCjtIrcTgHz3baySnPLwhFRfiGT/IIGyqZWCQUMICH7VOohwv6XsRSplSKVJSNkYJvtjAkH/yvFA49el1uTCTGCDH2+a4lcG8eMK1zhvndGwJKYrdqSfr74hUoNYr/UFD8+P2jYaw00wQyB/6Hjsv9/LP7kdhCSUFNt5MjbPIDYih+EBshRucwo6AZg7qOVwgSeSbC06/bBVJb6Vzxo5I2xl4gavxK+h5Nghx/JOroA0h8fYveE8DSNOUbQ2sbLSCWW2Ay8d2gJUQHSIxQ4GyWRe5odmdPEnerOVS33xTWDlO4ga1UcNmMmtzhKZ+lVJfRUSW9MszO4BwcHRWS0ajnUFDLizlpRcFtbZE50yZNMEZgI/tDPmD4jU=
+  file: "target/universal/training-project-1.0.0.zip"
+  skip_cleanup: true
+  on:
+    repo: LongCaoBK/test-project-cicd-v1
